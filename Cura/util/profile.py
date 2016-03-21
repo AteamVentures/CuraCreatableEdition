@@ -182,11 +182,11 @@ setting('solid_layer_thickness',     0.6, float, 'basic',    _('Fill')).setRange
 setting('fill_density',               20, float, 'basic',    _('Fill')).setExpertSubCategory(_('Infill')).setRange(0, 100).setLabel(_("Fill Density (%)"), _("This controls how densely filled the insides of your print will be. For a solid part use 100%, for an empty part use 0%. A value around 20% is usually enough.\nThis won't affect the outside of the print and only adjusts how strong the part becomes."))
 setting('nozzle_size',               0.4, float, 'advanced', _('Machine')).setRange(0.1,10).setLabel(_("Nozzle size (mm)"), _("The nozzle size is very important, this is used to calculate the line width of the infill, and used to calculate the amount of outside wall lines and thickness for the wall thickness you entered in the print settings."))
 setting('print_speed',                50, float, 'basic',    _('Speed and Temperature')).setRange(1).setLabel(_("Print speed (mm/s)"), _("Speed at which printing happens. A well adjusted CREATABLE D2 can reach 150mm/s, but for good quality prints you want to print slower. Printing speed depends on a lot of factors. So you will be experimenting with optimal settings for this."))
-setting('print_temperature',         210, int,   'basic',    _('Speed and Temperature')).setRange(0,340).setLabel(_("Printing temperature (C)"), _("Temperature used for printing. Set at 0 to pre-heat yourself.\nFor PLA a value of 210C is usually used.\nFor ABS a value of 230C or higher is required."))
-setting('print_temperature2',          0, int,   'basic',    _('Speed and Temperature')).setRange(0,340).setLabel(_("2nd nozzle temperature (C)"), _("Temperature used for printing. Set at 0 to pre-heat yourself.\nFor PLA a value of 210C is usually used.\nFor ABS a value of 230C or higher is required."))
-setting('print_temperature3',          0, int,   'basic',    _('Speed and Temperature')).setRange(0,340).setLabel(_("3th nozzle temperature (C)"), _("Temperature used for printing. Set at 0 to pre-heat yourself.\nFor PLA a value of 210C is usually used.\nFor ABS a value of 230C or higher is required."))
-setting('print_temperature4',          0, int,   'basic',    _('Speed and Temperature')).setRange(0,340).setLabel(_("4th nozzle temperature (C)"), _("Temperature used for printing. Set at 0 to pre-heat yourself.\nFor PLA a value of 210C is usually used.\nFor ABS a value of 230C or higher is required."))
-setting('print_temperature5',          0, int,   'basic',    _('Speed and Temperature')).setRange(0,340).setLabel(_("5th nozzle temperature (C)"), _("Temperature used for printing. Set at 0 to pre-heat yourself.\nFor PLA a value of 210C is usually used.\nFor ABS a value of 230C or higher is required."))
+setting('print_temperature',         210, int,   'basic',    _('Speed and Temperature')).setRange(0,340).setLabel(_("Printing temperature (C)"), _("Temperature used for printing. Set at 0 to pre-heat yourself.\nFor PLA a value of 200C is usually used.\nFor ABS a value of 240C or higher is required."))
+setting('print_temperature2',          0, int,   'basic',    _('Speed and Temperature')).setRange(0,340).setLabel(_("2nd nozzle temperature (C)"), _("Temperature used for printing. Set at 0 to pre-heat yourself.\nFor PLA a value of 200C is usually used.\nFor ABS a value of 240C or higher is required."))
+setting('print_temperature3',          0, int,   'basic',    _('Speed and Temperature')).setRange(0,340).setLabel(_("3th nozzle temperature (C)"), _("Temperature used for printing. Set at 0 to pre-heat yourself.\nFor PLA a value of 200C is usually used.\nFor ABS a value of 240C or higher is required."))
+setting('print_temperature4',          0, int,   'basic',    _('Speed and Temperature')).setRange(0,340).setLabel(_("4th nozzle temperature (C)"), _("Temperature used for printing. Set at 0 to pre-heat yourself.\nFor PLA a value of 200C is usually used.\nFor ABS a value of 240C or higher is required."))
+setting('print_temperature5',          0, int,   'basic',    _('Speed and Temperature')).setRange(0,340).setLabel(_("5th nozzle temperature (C)"), _("Temperature used for printing. Set at 0 to pre-heat yourself.\nFor PLA a value of 200C is usually used.\nFor ABS a value of 240C or higher is required."))
 setting('print_bed_temperature',      70, int,   'basic',    _('Speed and Temperature')).setRange(0,340).setLabel(_("Bed temperature (C)"), _("Temperature used for the heated printer bed. Set at 0 to pre-heat yourself."))
 setting('support',                'None', [_('None'), _('Touching buildplate'), _('Everywhere')], 'basic', _('Support')).setExpertSubCategory(_('Support')).setLabel(_("Support type"), _("Type of support structure build.\n\"Touching buildplate\" is the most commonly used support setting.\n\nNone does not do any support.\nTouching buildplate only creates support where the support structure will touch the build platform.\nEverywhere creates support even on top of parts of the model."))
 setting('platform_adhesion',      'None', [_('None'), _('Brim'), _('Raft')], 'basic', _('Support')).setExpertSubCategory([_('Skirt'), _('Brim'), _('Raft')]).setLabel(_("Platform adhesion type"), _("Different options that help in preventing corners from lifting due to warping.\nBrim adds a single layer thick flat area around your object which is easy to cut off afterwards, and it is the recommended option.\nRaft adds a thick raster below the object and a thin interface between this and your object.\n(Note that enabling the brim or raft disables the skirt)"))
@@ -278,12 +278,12 @@ G1 X-125
 G1 Z1
 M109 S{print_temperature}    ; set extruder temp and wait
 M190 S{print_bed_temperature}; get bed heating up and wait
-G92 E0
+G92 E-32
+G1 E0 F1000
 G1 E70 F200
-G1 E60 
 G1 F5000
 G1 X-100
-G92 E-5
+G92 E0
 """, str, 'alteration', 'alteration')
 #######################################################################################
 setting('end.gcode', """
@@ -293,7 +293,7 @@ M104 S0                                      ; hotend off
 M140 S0                                      ; heated bed heater off (if you have it)
 M107                                         ; fans off
 G92 E0                      			     ; set extruder to 0
-G1 E-30 F300                  			     ; retract a bit to relieve pressure
+G1 E-32 F300                  			     ; retract a bit to relieve pressure
 M84                                          ; steppers off
 G90                                          ; absolute positioning
 ;{profile_string}
