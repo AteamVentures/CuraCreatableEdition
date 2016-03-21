@@ -25,10 +25,9 @@ class newVersionDialog(wx.Dialog):
 		s.Add(wx.StaticText(p, -1, 'Welcome to the new version of Cura CREATABLE Edition.'))
 		s.Add(wx.StaticText(p, -1, '(This dialog is only shown once)'))
 		s.Add(wx.StaticLine(p), flag=wx.EXPAND|wx.TOP|wx.BOTTOM, border=10)
-		s.Add(wx.StaticText(p, -1, 'New in Version 15.08.31:'))
-		s.Add(wx.StaticText(p, -1, '* Solve filament diameter warning problem'))
-		s.Add(wx.StaticText(p, -1, '* Delete the example model which is shown when open cura 1st time'))
-		s.Add(wx.StaticText(p, -1, '* Reduse the speed of starting extrusion'))
+		s.Add(wx.StaticText(p, -1, 'New in Version 16.02.29:'))
+		s.Add(wx.StaticText(p, -1, '* Delete the retraction after pre-extruding in Start Gcode'))
+		s.Add(wx.StaticText(p, -1, '* Add retraction in End Gcode for preventing burning filament'))
 		
 		self.hasUltimaker = None
 		self.hasUltimaker2 = None
