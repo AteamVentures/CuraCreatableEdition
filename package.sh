@@ -22,7 +22,7 @@ BUILD_TARGET=${1:-none}
 ##Do we need to create the final archive
 ARCHIVE_FOR_DISTRIBUTION=1
 ##Which version name are we appending to the final archive
-export BUILD_NAME=CREATABLE_Edition_15.08.31
+export BUILD_NAME=CREATABLE_Edition_16.07.13
 TARGET_DIR=Cura_${BUILD_NAME}_${BUILD_TARGET}
 
 ##Which versions of external programs to use
@@ -136,6 +136,9 @@ if [ -d "C:/Arduino" ]; then
 elif [ -d "/Applications/Arduino.app/Contents/Resources/Java" ]; then
 	ARDUINO_PATH=/Applications/Arduino.app/Contents/Resources/Java
 	ARDUINO_VERSION=160
+elif [ -d "/Applications/Arduino/arduino-1.0.6-macosx/Arduino1.0.6.app/Contents/Resources/Java" ]; then
+	ARDUINO_PATH=/Applications/Arduino/arduino-1.0.6-macosx/Arduino1.0.6.app/Contents/Resources/Java
+	ARDUINO_VERSION=160	
 else
 	ARDUINO_PATH=/usr/share/arduino
 	ARDUINO_VERSION=160

@@ -159,15 +159,29 @@ FunctionEnd
 
 Section "Install Arduino Drivers"
   ; Set output path to the driver directory.
-  SetOutPath "$INSTDIR\drivers\"
-  File /r "drivers\"
+  SetOutPath "$INSTDIR\drivers\arduino\"
+  File /r "drivers\arduino\"
   
   ${If} ${RunningX64}
     IfSilent +2
-      ExecWait '"$INSTDIR\drivers\dpinst64.exe" /lm'
+      ExecWait '"$INSTDIR\drivers\arduino\dpinst64.exe" /lm'
   ${Else}
     IfSilent +2
-      ExecWait '"$INSTDIR\drivers\dpinst32.exe" /lm'
+      ExecWait '"$INSTDIR\drivers\arduino\dpinst32.exe" /lm'
+  ${EndIf}
+SectionEnd
+
+Section "Install SiliconLabs Drivers"
+  ; Set output path to the driver directory.
+  SetOutPath "$INSTDIR\drivers\sillab\"
+  File /r "drivers\sillab\"
+  
+  ${If} ${RunningX64}
+    IfSilent +2
+      ExecWait '"$INSTDIR\drivers\sillab\CP210xVCPInstaller_x64.exe" /lm'
+  ${Else}
+    IfSilent +2
+      ExecWait '"$INSTDIR\drivers\sillab\CP210xVCPInstaller_x86.exe" /lm'
   ${EndIf}
 SectionEnd
 
