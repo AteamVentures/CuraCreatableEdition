@@ -41,7 +41,7 @@ def serialList(forAutoDetect=False):
 			i=0
 			while True:
 				values = _winreg.EnumValue(key, i)
-				if not forAutoDetect or 'USBSER' in values[0]:
+				if not forAutoDetect or ('USBSER' in values[0]) or ('Silabser' in values[0]):
 					baselist+=[values[1]]
 				i+=1
 		except:
