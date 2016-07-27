@@ -41,13 +41,13 @@ def serialList(forAutoDetect=False):
 			i=0
 			while True:
 				values = _winreg.EnumValue(key, i)
-				if not forAutoDetect or 'USBSER' in values[0]:
+				if not forAutoDetect or ('USBSER' in values[0]) or ('Silabser' in values[0]):
 					baselist+=[values[1]]
 				i+=1
 		except:
 			pass
 	if forAutoDetect:
-		baselist = baselist + glob.glob('/dev/ttyUSB*') + glob.glob('/dev/ttyACM*') + glob.glob("/dev/cu.usb*")
+		baselist = baselist + glob.glob('/dev/ttyUSB*') + glob.glob('/dev/ttyACM*') + glob.glob("/dev/cu.usb*") + glob.glob("/dev/cu.SLAB*")
 		baselist = filter(lambda s: not 'Bluetooth' in s, baselist)
 		prev = profile.getMachineSetting('serial_port_auto')
 		if prev in baselist:

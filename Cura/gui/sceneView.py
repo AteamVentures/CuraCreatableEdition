@@ -974,7 +974,7 @@ class SceneView(openglGui.glGuiPanel):
 		glViewport(0, 0, size.GetWidth(), size.GetHeight())
 		glLoadIdentity()
 
-		glLightfv(GL_LIGHT0, GL_POSITION, [0.2, 0.2, 1.0, 0.0])
+		glLightfv(GL_LIGHT0, GL_POSITION, [0.6, 0.6, 1.0, 0.0])
 
 		glDisable(GL_RESCALE_NORMAL)
 		glDisable(GL_LIGHTING)
@@ -985,15 +985,16 @@ class SceneView(openglGui.glGuiPanel):
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
 
 		#scene background color
-		glClearColor(1.0,1.0,1.0,1.0)
+		glClearColor(0.4,0.4,0.4,1.0)
 		# glClearColor(0.8,0.8,0.8,1.0)
 		glClearStencil(0)
 		glClearDepth(1.0)
 
 		glMatrixMode(GL_PROJECTION)
 		glLoadIdentity()
-		aspect = float(size.GetWidth()) / float(size.GetHeight())
+		aspect = float(size.GetWidth()) / float(size.GetHeight())		
 		gluPerspective(45.0, aspect, 1.0, numpy.max(self._machineSize) * 4)
+
 
 		glMatrixMode(GL_MODELVIEW)
 		glLoadIdentity()
@@ -1363,125 +1364,6 @@ class SceneView(openglGui.glGuiPanel):
 
 			glPopMatrix()
 			
-			if not hasattr(self._platformMesh[machine], 'background'):
-				self._platformMesh[machine].background = openglHelpers.loadGLTexture('bg.png')
-			glBindTexture(GL_TEXTURE_2D, self._platformMesh[machine].background)
-			glEnable(GL_TEXTURE_2D)
-			
-			glEnable(GL_BLEND)
-			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
-			# glTexGeni(GL_S, GL_TEXTURE_GEN_MODE, GL_EYE_LINEAR);
-			# glTexGeni(GL_T, GL_TEXTURE_GEN_MODE, GL_EYE_LINEAR);
-			# glEnable(GL_TEXTURE_GEN_S);
-			# glEnable(GL_TEXTURE_GEN_T);
-			# glBlendFunc(GL_DST_COLOR, GL_ZERO)
-			dist = -300
-			above = 50
-			glColor4f(1,1,1,1)
-
-			glPushMatrix()
-
-			glRotate(-90,1,0,0)
-			# glRotate(180,0,0,1)
-			glRotate(0,0,1,0)
-			glRotate(180,0,0,1)
-
-			glTranslate(0,above,dist)
-
-			h = 50
-			w = -dist
-			d = 0
-			
-			glBegin(GL_QUADS)
-			glTexCoord2f(0, 1)
-			glVertex3f( -w, -h, d)
-			glTexCoord2f(1, 1)
-			glVertex3f(w, -h, d)
-			glTexCoord2f(1, 0)
-			glVertex3f(w, h, d)
-			glTexCoord2f(0, 0)
-			glVertex3f( -w, h, d)
-
-			glEnd()
-
-			glPopMatrix()
-
-			glPushMatrix()
-
-			glRotate(-90,1,0,0)
-			# glRotate(180,0,0,1)
-			glRotate(90,0,1,0)
-			glRotate(180,0,0,1)
-
-			glTranslate(0,above,dist)
-
-			glBegin(GL_QUADS)
-			glTexCoord2f(0, 1)
-			glVertex3f( -w, -h, d)
-			glTexCoord2f(1, 1)
-			glVertex3f(w, -h, d)
-			glTexCoord2f(1, 0)
-			glVertex3f(w, h, d)
-			glTexCoord2f(0, 0)
-			glVertex3f( -w, h, d)
-
-			glEnd()
-
-			glPopMatrix()
-
-			glPushMatrix()
-
-			glRotate(-90,1,0,0)
-			# glRotate(180,0,0,1)
-			glRotate(180,0,1,0)
-			glRotate(180,0,0,1)
-
-			glTranslate(0,above,dist)
-
-		
-
-			glBegin(GL_QUADS)
-			glTexCoord2f(0, 1)
-			glVertex3f( -w, -h, d)
-			glTexCoord2f(1, 1)
-			glVertex3f(w, -h, d)
-			glTexCoord2f(1, 0)
-			glVertex3f(w, h, d)
-			glTexCoord2f(0, 0)
-			glVertex3f( -w, h, d)
-
-			glEnd()
-
-
-			glPopMatrix()
-
-			glPushMatrix()
-
-			glRotate(-90,1,0,0)
-			# glRotate(180,0,0,1)
-			glRotate(-90,0,1,0)
-			glRotate(180,0,0,1)
-
-			glTranslate(0,above,dist)
-
-
-			glBegin(GL_QUADS)
-			glTexCoord2f(0, 1)
-			glVertex3f( -w, -h, d)
-			glTexCoord2f(1, 1)
-			glVertex3f(w, -h, d)
-			glTexCoord2f(1, 0)
-			glVertex3f(w, h, d)
-			glTexCoord2f(0, 0)
-			glVertex3f( -w, h, d)
-
-			glEnd()
-
-
-			glDisable(GL_TEXTURE_2D)
-			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
-			glPopMatrix()
-
 
 
 
@@ -1497,11 +1379,44 @@ class SceneView(openglGui.glGuiPanel):
 			glColor4f(1,1,1,1)
 			# glRotate(60,0,0,1)
 			glRotate(180,0,0,1)
+			glTranslate(0,105,0)
 			
-			
-			h = 120
-			w = 120
+			h = 8.5
+			w = 40
 			d = -0.1
+			glEnable(GL_BLEND)
+			glBlendFunc(GL_DST_COLOR, GL_ZERO)
+			glBegin(GL_QUADS)
+			glTexCoord2f(0.33, 0.974)
+			glVertex3f( w, h, d)
+			glTexCoord2f(0.67, 0.974)
+			glVertex3f(-w, h, d)
+			glTexCoord2f(0.67, 0.9)
+			glVertex3f(-w, -h, d)
+			glTexCoord2f(0.33, 0.9)
+			glVertex3f( w, -h, d)
+
+			glEnd()
+			glDisable(GL_TEXTURE_2D)
+			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
+			glPopMatrix()
+
+
+
+			if not hasattr(self._platformMesh[machine], 'bedShadow'):
+				self._platformMesh[machine].bedShadow = openglHelpers.loadGLTexture('shadow.png')
+			glBindTexture(GL_TEXTURE_2D, self._platformMesh[machine].bedShadow)
+			glEnable(GL_TEXTURE_2D)
+			glPushMatrix()
+
+			glColor4f(1,1,1,1)
+			# glRotate(60,0,0,1)
+			glRotate(180,0,0,1)
+			
+			
+			h = 150
+			w = 150
+			d = -10.1
 			glEnable(GL_BLEND)
 			glBlendFunc(GL_DST_COLOR, GL_ZERO)
 			glBegin(GL_QUADS)
@@ -1518,6 +1433,8 @@ class SceneView(openglGui.glGuiPanel):
 			glDisable(GL_TEXTURE_2D)
 			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
 			glPopMatrix()
+
+
 
 		elif machine.startswith('creatableD3'):
 			if machine not in self._platformMesh:
@@ -1550,134 +1467,17 @@ class SceneView(openglGui.glGuiPanel):
 
 			glPopMatrix()
 			
-			if not hasattr(self._platformMesh[machine], 'background'):
-				self._platformMesh[machine].background = openglHelpers.loadGLTexture('bg.png')
-			glBindTexture(GL_TEXTURE_2D, self._platformMesh[machine].background)
-			glEnable(GL_TEXTURE_2D)
-			
-			glEnable(GL_BLEND)
-			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
-			# glTexGeni(GL_S, GL_TEXTURE_GEN_MODE, GL_EYE_LINEAR);
-			# glTexGeni(GL_T, GL_TEXTURE_GEN_MODE, GL_EYE_LINEAR);
-			# glEnable(GL_TEXTURE_GEN_S);
-			# glEnable(GL_TEXTURE_GEN_T);
-			# glBlendFunc(GL_DST_COLOR, GL_ZERO)
-			dist = -300
-			above = 50
-			glColor4f(1,1,1,1)
+	
 
-			glPushMatrix()
-
-			glRotate(-90,1,0,0)
-			# glRotate(180,0,0,1)
-			glRotate(0,0,1,0)
-			glRotate(180,0,0,1)
-
-			glTranslate(0,above,dist)
-
-			h = 50
-			w = -dist
+			dist = -130
+			above = 100
+			h = above
+			w = -math.tan(math.radians(15)) * dist
 			d = 0
-			
-			glBegin(GL_QUADS)
-			glTexCoord2f(0, 1)
-			glVertex3f( -w, -h, d)
-			glTexCoord2f(1, 1)
-			glVertex3f(w, -h, d)
-			glTexCoord2f(1, 0)
-			glVertex3f(w, h, d)
-			glTexCoord2f(0, 0)
-			glVertex3f( -w, h, d)
-
-			glEnd()
-
-			glPopMatrix()
-
-			glPushMatrix()
-
-			glRotate(-90,1,0,0)
-			# glRotate(180,0,0,1)
-			glRotate(90,0,1,0)
-			glRotate(180,0,0,1)
-
-			glTranslate(0,above,dist)
-
-			glBegin(GL_QUADS)
-			glTexCoord2f(0, 1)
-			glVertex3f( -w, -h, d)
-			glTexCoord2f(1, 1)
-			glVertex3f(w, -h, d)
-			glTexCoord2f(1, 0)
-			glVertex3f(w, h, d)
-			glTexCoord2f(0, 0)
-			glVertex3f( -w, h, d)
-
-			glEnd()
-
-			glPopMatrix()
-
-			glPushMatrix()
-
-			glRotate(-90,1,0,0)
-			# glRotate(180,0,0,1)
-			glRotate(180,0,1,0)
-			glRotate(180,0,0,1)
-
-			glTranslate(0,above,dist)
-
-		
-
-			glBegin(GL_QUADS)
-			glTexCoord2f(0, 1)
-			glVertex3f( -w, -h, d)
-			glTexCoord2f(1, 1)
-			glVertex3f(w, -h, d)
-			glTexCoord2f(1, 0)
-			glVertex3f(w, h, d)
-			glTexCoord2f(0, 0)
-			glVertex3f( -w, h, d)
-
-			glEnd()
-
-
-			glPopMatrix()
-
-			glPushMatrix()
-
-			glRotate(-90,1,0,0)
-			# glRotate(180,0,0,1)
-			glRotate(-90,0,1,0)
-			glRotate(180,0,0,1)
-
-			glTranslate(0,above,dist)
-
-
-			glBegin(GL_QUADS)
-			glTexCoord2f(0, 1)
-			glVertex3f( -w, -h, d)
-			glTexCoord2f(1, 1)
-			glVertex3f(w, -h, d)
-			glTexCoord2f(1, 0)
-			glVertex3f(w, h, d)
-			glTexCoord2f(0, 0)
-			glVertex3f( -w, h, d)
-
-			glEnd()
-
-
-			glDisable(GL_TEXTURE_2D)
-			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
-			glPopMatrix()
-
-
-
-
 
 
 			if not hasattr(self._platformMesh[machine], 'texture'):
-				# self._platformMesh[machine].texture = openglHelpers.loadGLTexture('guide.png')
-				# self._platformMesh[machine].texture = openglHelpers.loadGLTexture('c.png')
-				self._platformMesh[machine].texture = openglHelpers.loadGLTexture('CREATABLE_D3_TEX.png')
+				self._platformMesh[machine].texture = openglHelpers.loadGLTexture('CREATABLE_D3_TEX_crop.png')
 			glBindTexture(GL_TEXTURE_2D, self._platformMesh[machine].texture)
 			glEnable(GL_TEXTURE_2D)
 			glPushMatrix()
@@ -1685,10 +1485,10 @@ class SceneView(openglGui.glGuiPanel):
 			glColor4f(1,1,1,1)
 			# glRotate(60,0,0,1)
 			glRotate(180,0,0,1)
+			glTranslate(0,105,0)
 			
-			
-			h = 120
-			w = 120
+			h = 10.5
+			w = 41
 			d = -0.1
 			glEnable(GL_BLEND)
 			glBlendFunc(GL_DST_COLOR, GL_ZERO)
@@ -1708,6 +1508,41 @@ class SceneView(openglGui.glGuiPanel):
 			glPopMatrix()
 
 
+
+			if not hasattr(self._platformMesh[machine], 'bedShadow'):
+				self._platformMesh[machine].bedShadow = openglHelpers.loadGLTexture('shadow.png')
+			glBindTexture(GL_TEXTURE_2D, self._platformMesh[machine].bedShadow)
+			glEnable(GL_TEXTURE_2D)
+			glPushMatrix()
+
+			glColor4f(1,1,1,1)
+			# glRotate(60,0,0,1)
+			glRotate(180,0,0,1)
+			
+			
+			h = 150
+			w = 150
+			d = -10.1
+			glEnable(GL_BLEND)
+			glBlendFunc(GL_DST_COLOR, GL_ZERO)
+			glBegin(GL_QUADS)
+			glTexCoord2f(0, 1)
+			glVertex3f( w, h, d)
+			glTexCoord2f(1, 1)
+			glVertex3f(-w, h, d)
+			glTexCoord2f(1, 0)
+			glVertex3f(-w, -h, d)
+			glTexCoord2f(0, 0)
+			glVertex3f( w, -h, d)
+
+			glEnd()
+			glDisable(GL_TEXTURE_2D)
+			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
+			glPopMatrix()
+
+
+
+
 		else:
 			# self._platformTexture = openglHelpers.loadGLTexture('checkerboard.png')
 			glColor4f(0,0,0,1)
@@ -1723,109 +1558,6 @@ class SceneView(openglGui.glGuiPanel):
 
 		glDepthMask(False)
 
-
-
-		# if machine_type not in self._platformMesh:
-		# 	self._platformMesh[machine_type] = None
-
-		# 	filename = None
-		# 	texture_name = None
-		# 	offset = [0,0,0]
-		# 	texture_offset = [0,0,0]
-		# 	texture_scale = 1.0
-		# 	if machine_type == 'ultimaker2' or machine_type == 'ultimaker2extended':
-		# 		filename = resources.getPathForMesh('ultimaker2_platform.stl')
-		# 		offset = [-9,-37,145]
-		# 		texture_name = 'Ultimaker2backplate.png'
-		# 		texture_offset = [9,150,-5]
-		# 	elif machine_type == 'ultimaker2go':
-		# 		filename = resources.getPathForMesh('ultimaker2go_platform.stl')
-		# 		offset = [0,-42,145]
-		# 		texture_offset = [0,105,-5]
-		# 		texture_name = 'Ultimaker2backplate.png'
-		# 		texture_scale = 0.9
-		# 	elif machine_type == 'ultimaker_plus':
-		# 		filename = resources.getPathForMesh('ultimaker2_platform.stl')
-		# 		offset = [0,-37,145]
-		# 		texture_offset = [0,150,-5]
-		# 		texture_name = 'UltimakerPlusbackplate.png'
-		# 	elif machine_type == 'ultimaker':
-		# 		filename = resources.getPathForMesh('ultimaker_platform.stl')
-		# 		offset = [0,0,2.5]
-		# 	elif machine_type == 'Witbox':
-		# 		filename = resources.getPathForMesh('Witbox_platform.stl')
-		# 		offset = [0,-37,145]
-
-		# 	if filename is not None:
-		# 		meshes = meshLoader.loadMeshes(filename)
-		# 		if len(meshes) > 0:
-		# 			self._platformMesh[machine_type] = meshes[0]
-		# 			self._platformMesh[machine_type]._drawOffset = numpy.array(offset, numpy.float32)
-		# 			self._platformMesh[machine_type].texture = None
-		# 			if texture_name is not None:
-		# 				self._platformMesh[machine_type].texture = openglHelpers.loadGLTexture(texture_name)
-		# 				self._platformMesh[machine_type].texture_offset = texture_offset
-		# 				self._platformMesh[machine_type].texture_scale = texture_scale
-		# if self._platformMesh[machine_type] is not None:
-		# 	mesh = self._platformMesh[machine_type]
-		# 	glColor4f(1,1,1,0.5)
-		# 	self._objectShader.bind()
-		# 	self._renderObject(mesh, False, False)
-		# 	self._objectShader.unbind()
-
-		# 	#For the Ultimaker 2 render the texture on the back plate to show the Ultimaker2 text.
-		# 	if mesh.texture is not None:
-		# 		glBindTexture(GL_TEXTURE_2D, mesh.texture)
-		# 		glEnable(GL_TEXTURE_2D)
-		# 		glPushMatrix()
-		# 		glColor4f(1,1,1,1)
-
-		# 		glTranslate(mesh.texture_offset[0], mesh.texture_offset[1], mesh.texture_offset[2])
-		# 		glScalef(mesh.texture_scale, mesh.texture_scale, mesh.texture_scale)
-		# 		h = 50
-		# 		d = 8
-		# 		w = 100
-		# 		glEnable(GL_BLEND)
-		# 		glBlendFunc(GL_DST_COLOR, GL_ONE_MINUS_SRC_ALPHA)
-		# 		glEnable(GL_ALPHA_TEST)
-		# 		glAlphaFunc(GL_GREATER, 0.0)
-		# 		glBegin(GL_QUADS)
-		# 		glTexCoord2f(1, 0)
-		# 		glVertex3f( w, 0, h)
-		# 		glTexCoord2f(0, 0)
-		# 		glVertex3f(-w, 0, h)
-		# 		glTexCoord2f(0, 1)
-		# 		glVertex3f(-w, 0, 0)
-		# 		glTexCoord2f(1, 1)
-		# 		glVertex3f( w, 0, 0)
-
-		# 		glTexCoord2f(1, 0)
-		# 		glVertex3f(-w, d, h)
-		# 		glTexCoord2f(0, 0)
-		# 		glVertex3f( w, d, h)
-		# 		glTexCoord2f(0, 1)
-		# 		glVertex3f( w, d, 0)
-		# 		glTexCoord2f(1, 1)
-		# 		glVertex3f(-w, d, 0)
-		# 		glEnd()
-		# 		glDisable(GL_TEXTURE_2D)
-		# 		glDisable(GL_ALPHA_TEST)
-		# 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
-		# 		glPopMatrix()
-		# else:
-		# 	glColor4f(0,0,0,1)
-		# 	glLineWidth(3)
-		# 	glBegin(GL_LINES)
-		# 	glVertex3f(-size[0] / 2, -size[1] / 2, 0)
-		# 	glVertex3f(-size[0] / 2, -size[1] / 2, 10)
-		# 	glVertex3f(-size[0] / 2, -size[1] / 2, 0)
-		# 	glVertex3f(-size[0] / 2+10, -size[1] / 2, 0)
-		# 	glVertex3f(-size[0] / 2, -size[1] / 2, 0)
-		# 	glVertex3f(-size[0] / 2, -size[1] / 2+10, 0)
-		# 	glEnd()
-
-		# glDepthMask(False)
-
 		polys = profile.getMachineSizePolygons()
 		height = profile.getMachineSettingFloat('machine_height')
 		circular = profile.getMachineSetting('machine_shape') == 'Circular'
@@ -1839,7 +1571,7 @@ class SceneView(openglGui.glGuiPanel):
 				else:
 					glColor4ub(252, 236, 175, 100)
 			else:
-				glColor4ub(252, 236, 175, 100)
+				glColor4ub(255, 255, 255, 140)
 
 			glVertex3f(polys[0][n][0], polys[0][n][1], height)
 			glVertex3f(polys[0][n][0], polys[0][n][1], 0)
@@ -1848,7 +1580,7 @@ class SceneView(openglGui.glGuiPanel):
 		glEnd()
 
 		#Draw top of build volume.
-		glColor4ub(228, 210, 160, 100)
+		glColor4ub(210, 210, 210, 140)
 		glBegin(GL_TRIANGLE_FAN)
 		for p in polys[0][::-1]:
 			glVertex3f(p[0], p[1], height)

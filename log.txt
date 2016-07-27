@@ -6459,7 +6459,7 @@ MakeNSIS v2.46 - Copyright 1995-2009 Contributors
 See the file COPYING for license details.
 Credits can be found in the Users Manual.
 
-Command line defined: "VERSION=CREATABLE_Edition_16.07.13"
+Command line defined: "VERSION=CREATABLE_Edition_16.07.27"
 Processing config: 
 Processing plugin dlls: "c:\Program Files (x86)\NSIS\Plugins\*.dll"
  - AdvSplash::show
@@ -6527,7 +6527,7 @@ Processing plugin dlls: "c:\Program Files (x86)\NSIS\Plugins\*.dll"
 
 !define: "MUI_INSERT_NSISCONF"=""
 
-Changing directory to: "c:\Users\despild\ATEAMVENTURES\Cura_Packages\Cura_For_D3\CuraCreatableEdition_Ver16.07.13\scripts\win32"
+Changing directory to: "c:\Users\despild\Documents\GitHub\CuraCreatableEdition\scripts\win32"
 
 Processing script file: "scripts/win32/installer.nsi"
 PluginDir: "nsisPlugins"
@@ -6556,10 +6556,10 @@ PluginDir: "nsisPlugins"
  - AccessControl::SetRegKeyGroup
  - AccessControl::SetRegKeyOwner
  - AccessControl::SidToName
-Name: "Cura CREATABLE_Edition_16.07.13"
-OutFile: "Cura_CREATABLE_Edition_16.07.13.exe"
-InstallDir: "$PROGRAMFILES\Cura_CREATABLE_Edition_16.07.13"
-InstallRegKey: "HKLM\Software\Cura_CREATABLE_Edition_16.07.13\Install_Dir"
+Name: "Cura CREATABLE_Edition_16.07.27"
+OutFile: "Cura_CREATABLE_Edition_16.07.27.exe"
+InstallDir: "$PROGRAMFILES\Cura_CREATABLE_Edition_16.07.27"
+InstallRegKey: "HKLM\Software\Cura_CREATABLE_Edition_16.07.27\Install_Dir"
 SetCompressor: /SOLID lzma
 !include: "c:\Program Files (x86)\NSIS\Include\MUI2.nsh"
 !include: "c:\Program Files (x86)\NSIS\Contrib\Modern UI 2\MUI2.nsh"
@@ -6608,7 +6608,7 @@ FunctionEnd
 !define: "MUI_FINISHPAGE_NOAUTOCLOSE"=""
 !define: "MUI_UNFINISHPAGE_NOAUTOCLOSE"=""
 !define: "MUI_FINISHPAGE_RUN"=""
-!define: "MUI_FINISHPAGE_RUN_TEXT"="Start Cura CREATABLE_Edition_16.07.13"
+!define: "MUI_FINISHPAGE_RUN_TEXT"="Start Cura CREATABLE_Edition_16.07.27"
 !define: "MUI_FINISHPAGE_RUN_FUNCTION"="LaunchLink"
 !insertmacro: MUI_PAGE_DIRECTORY
 !insertmacro: end of MUI_PAGE_DIRECTORY
@@ -6630,213 +6630,213 @@ FunctionEnd
 !insertmacro: end of MUI_RESERVEFILE_LANGDLL
 ReserveFile: "InstallOptions.dll" 14848 bytes
 ReserveFile: "header.bmp" 0/21722 bytes
-Section: "Cura CREATABLE_Edition_16.07.13"
+Section: "Cura CREATABLE_Edition_16.07.27"
 SectionIn: [RO] 
 SetOutPath: "$INSTDIR"
 File: "CuraEngine.exe" 575100 bytes
-File: "cura.bat" 36 bytes
+File: "cura.bat" 38 bytes
 File: "libgcc_s_sjlj-1.dll" 489773 bytes
 File: "libstdc++-6.dll" 6762827 bytes
 File: "libwinpthread-1.dll" 243109 bytes
 File: Descending to: "dist\Cura\"
 File: "EjectMedia.exe" 50072 bytes
-File: "LICENSE" 34520 bytes
+File: "LICENSE" 35181 bytes
 File: "__init__.py" 0 bytes
-File: "cura.py" 3085 bytes
-File: "doctest.py" 3063 bytes
-File: "serialCommunication.py" 2360 bytes
+File: "cura.py" 3174 bytes
+File: "doctest.py" 3163 bytes
+File: "serialCommunication.py" 2440 bytes
 File: "version" 27 bytes
 File: Descending to: "dist\Cura\avr_isp\"
 File: "__init__.py" 0 bytes
-File: "chipDB.py" 604 bytes
-File: "intelHex.py" 1347 bytes
-File: "ispBase.py" 1979 bytes
-File: "stk500v2.py" 6655 bytes
+File: "chipDB.py" 629 bytes
+File: "intelHex.py" 1393 bytes
+File: "ispBase.py" 2042 bytes
+File: "stk500v2.py" 6872 bytes
 File: Descending to: "dist\Cura\gui\"
 File: "__init__.py" 0 bytes
 File: "__init__.pyc" 107 bytes
-File: "aboutWindow.py" 5115 bytes
+File: "aboutWindow.py" 5708 bytes
 File: "aboutWindow.pyc" 5203 bytes
-File: "alterationPanel.py" 2345 bytes
+File: "alterationPanel.py" 2403 bytes
 File: "alterationPanel.pyc" 3087 bytes
-File: "app.py" 6364 bytes
+File: "app.py" 6560 bytes
 File: "app.pyc" 7281 bytes
-File: "configBase.py" 10258 bytes
+File: "configBase.py" 10543 bytes
 File: "configBase.pyc" 11418 bytes
-File: "configWizard.py" 77341 bytes
+File: "configWizard.py" 79124 bytes
 File: "configWizard.pyc" 72414 bytes
-File: "expertConfig.py" 1588 bytes
+File: "expertConfig.py" 1634 bytes
 File: "expertConfig.pyc" 2413 bytes
-File: "firmwareInstall.py" 10653 bytes
+File: "firmwareInstall.py" 10978 bytes
 File: "firmwareInstall.pyc" 12061 bytes
-File: "mainWindow.py" 31149 bytes
+File: "mainWindow.py" 31946 bytes
 File: "mainWindow.pyc" 31480 bytes
-File: "newVersionDialog.py" 3124 bytes
+File: "newVersionDialog.py" 3234 bytes
 File: "newVersionDialog.pyc" 4010 bytes
-File: "pluginPanel.py" 8924 bytes
+File: "pluginPanel.py" 9138 bytes
 File: "pluginPanel.pyc" 9606 bytes
-File: "preferencesDialog.py" 7713 bytes
+File: "preferencesDialog.py" 7918 bytes
 File: "preferencesDialog.pyc" 8812 bytes
-File: "printWindow.py" 21912 bytes
+File: "printWindow.py" 22510 bytes
 File: "printWindow.pyc" 24040 bytes
-File: "sceneView.py" 64814 bytes
+File: "sceneView.py" 59887 bytes
 File: "sceneView.pyc" 57154 bytes
-File: "simpleMode.py" 6409 bytes
+File: "simpleMode.py" 6585 bytes
 File: "simpleMode.pyc" 5972 bytes
-File: "splashScreen.py" 580 bytes
+File: "splashScreen.py" 596 bytes
 File: "splashScreen.pyc" 1047 bytes
 File: Descending to: "dist\Cura\gui\tools\"
-File: "__init__.py" 1 bytes
+File: "__init__.py" 2 bytes
 File: "__init__.pyc" 113 bytes
-File: "imageToMesh.py" 5639 bytes
+File: "imageToMesh.py" 5794 bytes
 File: "imageToMesh.pyc" 7131 bytes
-File: "minecraftImport.py" 8653 bytes
+File: "minecraftImport.py" 8910 bytes
 File: "minecraftImport.pyc" 10059 bytes
-File: "pidDebugger.py" 7583 bytes
+File: "pidDebugger.py" 7807 bytes
 File: "pidDebugger.pyc" 11659 bytes
-File: "youmagineGui.py" 19592 bytes
+File: "youmagineGui.py" 20072 bytes
 File: "youmagineGui.pyc" 22335 bytes
 File: Descending to: "dist\Cura\gui\util\"
-File: "__init__.py" 15 bytes
+File: "__init__.py" 16 bytes
 File: "__init__.pyc" 112 bytes
-File: "dropTarget.py" 664 bytes
+File: "dropTarget.py" 687 bytes
 File: "dropTarget.pyc" 1089 bytes
-File: "engineResultView.py" 12497 bytes
+File: "engineResultView.py" 12821 bytes
 File: "engineResultView.pyc" 12036 bytes
-File: "gcodeTextArea.py" 4260 bytes
+File: "gcodeTextArea.py" 4399 bytes
 File: "gcodeTextArea.pyc" 5150 bytes
-File: "openglGui.py" 29237 bytes
+File: "openglGui.py" 30337 bytes
 File: "openglGui.pyc" 39952 bytes
-File: "openglHelpers.py" 14503 bytes
+File: "openglHelpers.py" 14982 bytes
 File: "openglHelpers.pyc" 16424 bytes
-File: "previewTools.py" 16976 bytes
+File: "previewTools.py" 17510 bytes
 File: "previewTools.pyc" 17775 bytes
-File: "taskbar.py" 2870 bytes
+File: "taskbar.py" 2915 bytes
 File: "taskbar.pyc" 1654 bytes
 File: "taskbarlib.tlb" 6832 bytes
-File: "webcam.py" 5337 bytes
+File: "webcam.py" 5529 bytes
 File: "webcam.pyc" 6475 bytes
 File: Descending to: "dist\Cura\util\"
 File: "__init__.py" 14 bytes
 File: "__init__.pyc" 108 bytes
 File: "bigDataStorage.py" 2393 bytes
 File: "bigDataStorage.pyc" 3757 bytes
-File: "explorer.py" 1789 bytes
+File: "explorer.py" 1835 bytes
 File: "explorer.pyc" 2075 bytes
-File: "gcodeGenerator.py" 2981 bytes
+File: "gcodeGenerator.py" 3081 bytes
 File: "gcodeGenerator.pyc" 4501 bytes
-File: "gcodeInterpreter.py" 9952 bytes
+File: "gcodeInterpreter.py" 10276 bytes
 File: "gcodeInterpreter.pyc" 8286 bytes
-File: "machineCom.py" 21779 bytes
+File: "machineCom.py" 22478 bytes
 File: "machineCom.pyc" 22487 bytes
-File: "meshLoader.py" 1811 bytes
+File: "meshLoader.py" 1864 bytes
 File: "meshLoader.pyc" 2392 bytes
-File: "objectScene.py" 11950 bytes
+File: "objectScene.py" 12291 bytes
 File: "objectScene.pyc" 12698 bytes
-File: "pluginInfo.py" 4995 bytes
+File: "pluginInfo.py" 5165 bytes
 File: "pluginInfo.pyc" 6462 bytes
-File: "polygon.py" 5539 bytes
+File: "polygon.py" 5753 bytes
 File: "polygon.pyc" 6404 bytes
-File: "printableObject.py" 14912 bytes
+File: "printableObject.py" 15333 bytes
 File: "printableObject.pyc" 17065 bytes
-File: "profile.py" 82233 bytes
+File: "profile.py" 83572 bytes
 File: "profile.pyc" 73806 bytes
-File: "removableStorage.py" 5139 bytes
+File: "removableStorage.py" 5303 bytes
 File: "removableStorage.pyc" 5597 bytes
-File: "resources.py" 3044 bytes
+File: "resources.py" 3140 bytes
 File: "resources.pyc" 3867 bytes
-File: "sliceEngine.py" 26425 bytes
+File: "sliceEngine.py" 27041 bytes
 File: "sliceEngine.pyc" 25308 bytes
-File: "util3d.py" 2094 bytes
-File: "validators.py" 7713 bytes
+File: "util3d.py" 2183 bytes
+File: "validators.py" 7895 bytes
 File: "validators.pyc" 8678 bytes
-File: "version.py" 2901 bytes
+File: "version.py" 2988 bytes
 File: "version.pyc" 3343 bytes
-File: "youmagine.py" 7995 bytes
+File: "youmagine.py" 8255 bytes
 File: "youmagine.pyc" 11730 bytes
 File: Descending to: "dist\Cura\util\meshLoaders\"
 File: "__init__.py" 0 bytes
 File: "__init__.pyc" 120 bytes
-File: "amf.py" 4645 bytes
+File: "amf.py" 4799 bytes
 File: "amf.pyc" 5502 bytes
-File: "dae.py" 7868 bytes
+File: "dae.py" 8043 bytes
 File: "dae.pyc" 7351 bytes
-File: "obj.py" 1393 bytes
+File: "obj.py" 1440 bytes
 File: "obj.pyc" 1872 bytes
-File: "stl.py" 2948 bytes
+File: "stl.py" 3041 bytes
 File: "stl.pyc" 3797 bytes
 File: Descending to: "dist\Cura\util\printerConnection\"
 File: "__init__.py" 0 bytes
 File: "__init__.pyc" 126 bytes
-File: "doodle3dConnect.py" 12550 bytes
+File: "doodle3dConnect.py" 12912 bytes
 File: "doodle3dConnect.pyc" 11656 bytes
-File: "dummyConnection.py" 3042 bytes
+File: "dummyConnection.py" 3148 bytes
 File: "dummyConnection.pyc" 4490 bytes
-File: "printerConnectionBase.py" 4782 bytes
+File: "printerConnectionBase.py" 4936 bytes
 File: "printerConnectionBase.pyc" 7474 bytes
-File: "printerConnectionManager.py" 1696 bytes
+File: "printerConnectionManager.py" 1741 bytes
 File: "printerConnectionManager.pyc" 2362 bytes
-File: "serialConnection.py" 7426 bytes
+File: "serialConnection.py" 7645 bytes
 File: "serialConnection.pyc" 9280 bytes
 File: Descending to: "dist\Cura\util\pymclevel\"
-File: "LICENSE.txt" 733 bytes
-File: "README.txt" 3486 bytes
-File: "__init__.py" 992 bytes
+File: "LICENSE.txt" 745 bytes
+File: "README.txt" 3613 bytes
+File: "__init__.py" 1006 bytes
 File: "__init__.pyc" 2011 bytes
-File: "biome_types.py" 524 bytes
-File: "block_copy.py" 5598 bytes
+File: "biome_types.py" 550 bytes
+File: "block_copy.py" 5743 bytes
 File: "block_copy.pyc" 4883 bytes
-File: "block_fill.py" 3421 bytes
+File: "block_fill.py" 3524 bytes
 File: "block_fill.pyc" 3131 bytes
-File: "blockrotation.py" 14266 bytes
+File: "blockrotation.py" 14791 bytes
 File: "blockrotation.pyc" 14491 bytes
-File: "box.py" 5960 bytes
+File: "box.py" 6171 bytes
 File: "box.pyc" 8565 bytes
-File: "cachefunc.py" 5282 bytes
-File: "classic.yaml" 4780 bytes
-File: "entity.py" 4873 bytes
+File: "cachefunc.py" 5446 bytes
+File: "classic.yaml" 5076 bytes
+File: "entity.py" 5063 bytes
 File: "entity.pyc" 5406 bytes
-File: "faces.py" 539 bytes
+File: "faces.py" 556 bytes
 File: "faces.pyc" 558 bytes
-File: "indev.py" 11398 bytes
+File: "indev.py" 11716 bytes
 File: "indev.pyc" 11332 bytes
-File: "indev.yaml" 6887 bytes
-File: "infiniteworld.py" 61606 bytes
+File: "indev.yaml" 7302 bytes
+File: "infiniteworld.py" 63435 bytes
 File: "infiniteworld.pyc" 60095 bytes
-File: "items.py" 30684 bytes
+File: "items.py" 31327 bytes
 File: "items.pyc" 30682 bytes
-File: "items.txt" 27191 bytes
-File: "java.py" 5808 bytes
+File: "items.txt" 27724 bytes
+File: "java.py" 5993 bytes
 File: "java.pyc" 6333 bytes
-File: "level.py" 18377 bytes
+File: "level.py" 18981 bytes
 File: "level.pyc" 23471 bytes
-File: "materials.py" 33799 bytes
+File: "materials.py" 34672 bytes
 File: "materials.pyc" 28584 bytes
-File: "mce.py" 47733 bytes
-File: "mclevel.py" 10946 bytes
+File: "mce.py" 49233 bytes
+File: "mclevel.py" 11240 bytes
 File: "mclevel.pyc" 11053 bytes
-File: "mclevelbase.py" 2239 bytes
+File: "mclevelbase.py" 2323 bytes
 File: "mclevelbase.pyc" 2895 bytes
-File: "minecraft.yaml" 39494 bytes
-File: "minecraft_server.py" 20160 bytes
-File: "nbt.py" 14831 bytes
+File: "minecraft.yaml" 41288 bytes
+File: "minecraft_server.py" 20715 bytes
+File: "nbt.py" 15392 bytes
 File: "nbt.pyc" 20701 bytes
-File: "nbt_util.py" 801 bytes
+File: "nbt_util.py" 828 bytes
 File: "nbt_util.pyc" 910 bytes
-File: "pocket.py" 15081 bytes
+File: "pocket.py" 15508 bytes
 File: "pocket.pyc" 12380 bytes
-File: "pocket.yaml" 14265 bytes
-File: "regionfile.py" 11336 bytes
+File: "pocket.yaml" 15053 bytes
+File: "regionfile.py" 11658 bytes
 File: "regionfile.pyc" 10430 bytes
-File: "schematic.py" 18247 bytes
+File: "schematic.py" 18807 bytes
 File: "schematic.pyc" 18990 bytes
 File: Descending to: "dist\plugins\"
-File: "TweakAtZ.py" 11933 bytes
-File: "pauseAtZ.py" 3648 bytes
+File: "TweakAtZ.py" 12205 bytes
+File: "pauseAtZ.py" 3773 bytes
 File: Descending to: "dist\plugins\PronterfaceUI\"
 File: "image.png" 82308 bytes
 File: "map.png" 5228 bytes
-File: "script.py" 2679 bytes
+File: "script.py" 2738 bytes
 File: Descending to: "dist\python\"
 File: "LICENSE.txt" 40080 bytes
 File: "Microsoft.VC90.CRT.manifest" 524 bytes
@@ -9395,7 +9395,7 @@ File: "test_resources.py" 19388 bytes
 File: Descending to: "dist\python\Lib\site-packages\setuptools-0.6c11-py2.7.egg-info\"
 File: "PKG-INFO" 9278 bytes
 File: "SOURCES.txt" 1591 bytes
-File: "dependency_links.txt" 0/1 bytes
+File: "dependency_links.txt" 1 bytes
 File: "entry_points.txt" 2546 bytes
 File: "top_level.txt" 43 bytes
 File: "zip-safe" 0/1 bytes
@@ -10202,14 +10202,17 @@ File: ".DS_Store" 6148 bytes
 File: "Attribution.txt" 754 bytes
 File: "cursive_thanks.stl" 1229784 bytes
 File: Descending to: "dist\resources\firmware\"
-File: ".gitignore" 26 bytes
-File: "Attribution.txt" 603 bytes
-File: "MarlinUltimaker-COPYING" 35146 bytes
+File: ".gitignore" 28 bytes
+File: "Attribution.txt" 615 bytes
+File: "MarlinUltimaker-COPYING" 35819 bytes
 File: Descending to: "dist\resources\images\"
 File: "Bed_MappingText.png" 37039 bytes
+File: "Bed_MappingText_crop.png" 7474 bytes
 File: "CREATABLE_D3_TEX.png" 28115 bytes
 File: "CREATABLE_D3_TEX_.png" 18105 bytes
-File: "Grid.png" 17641 bytes
+File: "CREATABLE_D3_TEX_crop.png" 14823 bytes
+File: "Grid.png" 15019 bytes
+File: "Grid_.png" 17641 bytes
 File: "Printrbot_logo.png" 1767 bytes
 File: "Ultimaker2backplate.png" 15575 bytes
 File: "UltimakerPlusbackplate.png" 15848 bytes
@@ -10258,6 +10261,7 @@ File: "print-move-z10.png" 593 bytes
 File: "question.png" 596 bytes
 File: "ready.png" 1152 bytes
 File: "retract.png" 358 bytes
+File: "shadow.png" 440645 bytes
 File: "splash.png" 283104 bytes
 File: "ultimaker-overlay.png" 17430 bytes
 File: "youmagine-text.png" 5646 bytes
@@ -10266,52 +10270,52 @@ File: "Cura_Ui_Pronterface.svg" 847521 bytes
 File: "Cura_Ui_buttons.svg" 400451 bytes
 File: "Cura_Ui_splash.svg" 2757239 bytes
 File: Descending to: "dist\resources\locale\"
-File: "Cura.in" 256 bytes
-File: "Cura.pot" 65090 bytes
+File: "Cura.in" 269 bytes
+File: "Cura.pot" 67836 bytes
 File: Descending to: "dist\resources\locale\cs\"
 File: Descending to: "dist\resources\locale\cs\LC_MESSAGES\"
 File: "Cura.mo" 60818 bytes
-File: "Cura.po" 93413 bytes
+File: "Cura.po" 96498 bytes
 File: Descending to: "dist\resources\locale\de\"
 File: Descending to: "dist\resources\locale\de\LC_MESSAGES\"
 File: "Cura.mo" 74809 bytes
-File: "Cura.po" 105139 bytes
+File: "Cura.po" 108503 bytes
 File: Descending to: "dist\resources\locale\en\"
 File: Descending to: "dist\resources\locale\en\LC_MESSAGES\"
 File: "Cura.mo" 368 bytes
-File: "Cura.po" 65067 bytes
+File: "Cura.po" 67813 bytes
 File: Descending to: "dist\resources\locale\es\"
 File: Descending to: "dist\resources\locale\es\LC_MESSAGES\"
 File: "Cura.mo" 73771 bytes
-File: "Cura.po" 102025 bytes
+File: "Cura.po" 105319 bytes
 File: Descending to: "dist\resources\locale\fr\"
 File: Descending to: "dist\resources\locale\fr\LC_MESSAGES\"
 File: "Cura.mo" 73991 bytes
-File: "Cura.po" 104140 bytes
+File: "Cura.po" 107454 bytes
 File: Descending to: "dist\resources\locale\ko\"
 File: Descending to: "dist\resources\locale\ko\LC_MESSAGES\"
 File: "Cura.mo" 79168 bytes
-File: "Cura.po" 101390 bytes
+File: "Cura.po" 104439 bytes
 File: Descending to: "dist\resources\locale\nl\"
 File: Descending to: "dist\resources\locale\nl\LC_MESSAGES\"
 File: "Cura.mo" 45337 bytes
-File: "Cura.po" 96510 bytes
+File: "Cura.po" 99791 bytes
 File: Descending to: "dist\resources\locale\po\"
 File: Descending to: "dist\resources\locale\po\LC_MESSAGES\"
 File: "Cura.mo" 44484 bytes
-File: "Cura.po" 96998 bytes
+File: "Cura.po" 100268 bytes
 File: Descending to: "dist\resources\locale\ru\"
 File: Descending to: "dist\resources\locale\ru\LC_MESSAGES\"
 File: "Cura.mo" 76850 bytes
-File: "Cura.po" 112896 bytes
+File: "Cura.po" 116000 bytes
 File: Descending to: "dist\resources\locale\tr\"
 File: Descending to: "dist\resources\locale\tr\LC_MESSAGES\"
 File: "Cura.mo" 62294 bytes
-File: "Cura.po" 96954 bytes
+File: "Cura.po" 100113 bytes
 File: Descending to: "dist\resources\locale\zh\"
 File: Descending to: "dist\resources\locale\zh\LC_MESSAGES\"
 File: "Cura.mo" 43837 bytes
-File: "Cura.po" 82394 bytes
+File: "Cura.po" 85338 bytes
 File: Descending to: "dist\resources\machine_profiles\"
 File: "BFB.ini" 1080 bytes
 File: "DeltaBot.ini" 3624 bytes
@@ -10319,42 +10323,42 @@ File: "MakerBotReplicator.ini" 1605 bytes
 File: "Mendel.ini" 379 bytes
 File: "Ord.ini" 972 bytes
 File: "Prusa Mendel i3.ini" 388 bytes
-File: "Rigid3D.ini" 1818 bytes
+File: "Rigid3D.ini" 1900 bytes
 File: "RigidBot.ini" 383 bytes
 File: "RigidBotBig.ini" 386 bytes
 File: "Witbox.ini" 2352 bytes
 File: "Zone3d Printer.ini" 396 bytes
-File: "julia.ini" 1825 bytes
+File: "julia.ini" 1905 bytes
 File: "punchtec Connect XL.ini" 777 bytes
 File: Descending to: "dist\resources\meshes\"
 File: ".DS_Store" 6148 bytes
-File: "Attribution.txt" 2 bytes
+File: "Attribution.txt" 0/2 bytes
 File: "creatableD2_platform.STL" 74884 bytes
 File: "creatableD3_platform.STL" 134684 bytes
 File: Descending to: "dist\resources\quickprint\"
 File: ".DS_Store" 6148 bytes
 File: Descending to: "dist\resources\quickprint\materials\"
-File: "1_pla.ini" 136 bytes
-File: "2_abs.ini" 136 bytes
+File: "1_pla.ini" 145 bytes
+File: "2_abs.ini" 145 bytes
 File: Descending to: "dist\resources\quickprint\profiles\"
 File: "1_low.ini" 328 bytes
 File: "2_normal.ini" 285 bytes
 File: "3_high.ini" 284 bytes
 File: Returning to: "dist"
-WriteRegStr: HKLM\SOFTWARE\Cura_CREATABLE_Edition_16.07.13\Install_Dir=$INSTDIR
-WriteRegStr: HKLM\Software\Microsoft\Windows\CurrentVersion\Uninstall\Cura_CREATABLE_Edition_16.07.13\DisplayName=Cura CREATABLE_Edition_16.07.13
-WriteRegStr: HKLM\Software\Microsoft\Windows\CurrentVersion\Uninstall\Cura_CREATABLE_Edition_16.07.13\UninstallString="$INSTDIR\uninstall.exe"
-WriteRegDWORD: HKLM\Software\Microsoft\Windows\CurrentVersion\Uninstall\Cura_CREATABLE_Edition_16.07.13\NoModify=1
-WriteRegDWORD: HKLM\Software\Microsoft\Windows\CurrentVersion\Uninstall\Cura_CREATABLE_Edition_16.07.13\NoRepair=1
+WriteRegStr: HKLM\SOFTWARE\Cura_CREATABLE_Edition_16.07.27\Install_Dir=$INSTDIR
+WriteRegStr: HKLM\Software\Microsoft\Windows\CurrentVersion\Uninstall\Cura_CREATABLE_Edition_16.07.27\DisplayName=Cura CREATABLE_Edition_16.07.27
+WriteRegStr: HKLM\Software\Microsoft\Windows\CurrentVersion\Uninstall\Cura_CREATABLE_Edition_16.07.27\UninstallString="$INSTDIR\uninstall.exe"
+WriteRegDWORD: HKLM\Software\Microsoft\Windows\CurrentVersion\Uninstall\Cura_CREATABLE_Edition_16.07.27\NoModify=1
+WriteRegDWORD: HKLM\Software\Microsoft\Windows\CurrentVersion\Uninstall\Cura_CREATABLE_Edition_16.07.27\NoRepair=1
 WriteUninstaller: "uninstall.exe"
 SetShellVarContext: all
-CreateDirectory: "$SMPROGRAMS\Cura CREATABLE_Edition_16.07.13"
-CreateShortCut: "$SMPROGRAMS\Cura CREATABLE_Edition_16.07.13\Uninstall Cura CREATABLE_Edition_16.07.13.lnk"->"$INSTDIR\uninstall.exe"  icon:$INSTDIR\uninstall.exe,0, showmode=0x0, hotkey=0x0, comment=
-CreateShortCut: "$SMPROGRAMS\Cura CREATABLE_Edition_16.07.13\Cura CREATABLE_Edition_16.07.13.lnk"->"$INSTDIR\python\pythonw.exe" -m "Cura.cura" icon:$INSTDIR\resources\cura.ico,0, showmode=0x0, hotkey=0x0, comment=
+CreateDirectory: "$SMPROGRAMS\Cura CREATABLE_Edition_16.07.27"
+CreateShortCut: "$SMPROGRAMS\Cura CREATABLE_Edition_16.07.27\Uninstall Cura CREATABLE_Edition_16.07.27.lnk"->"$INSTDIR\uninstall.exe"  icon:$INSTDIR\uninstall.exe,0, showmode=0x0, hotkey=0x0, comment=
+CreateShortCut: "$SMPROGRAMS\Cura CREATABLE_Edition_16.07.27\Cura CREATABLE_Edition_16.07.27.lnk"->"$INSTDIR\python\pythonw.exe" -m "Cura.cura" icon:$INSTDIR\resources\cura.ico,0, showmode=0x0, hotkey=0x0, comment=
 SectionEnd
 Function: "LaunchLink"
 SetShellVarContext: all
-Exec: ""$WINDIR\explorer.exe" "$SMPROGRAMS\Cura CREATABLE_Edition_16.07.13\Cura CREATABLE_Edition_16.07.13.lnk"" (->)
+Exec: ""$WINDIR\explorer.exe" "$SMPROGRAMS\Cura CREATABLE_Edition_16.07.27\Cura CREATABLE_Edition_16.07.27.lnk"" (->)
 FunctionEnd
 Section: "Install Arduino Drivers"
 SetOutPath: "$INSTDIR\drivers\arduino\"
@@ -10422,10 +10426,10 @@ WriteRegStr: HKCR\Cura AMF model file\shell\=open
 WriteRegStr: HKCR\Cura AMF model file\shell\open\command\="$INSTDIR\python\pythonw.exe" -c "import os; os.chdir(\"$INSTDIR\"); import Cura.cura; Cura.cura.main()" "%1"
 SectionEnd
 Section: "Uninstall"
-DeleteRegKey: HKLM\Software\Microsoft\Windows\CurrentVersion\Uninstall\Cura_CREATABLE_Edition_16.07.13
-DeleteRegKey: HKLM\SOFTWARE\Cura_CREATABLE_Edition_16.07.13
+DeleteRegKey: HKLM\Software\Microsoft\Windows\CurrentVersion\Uninstall\Cura_CREATABLE_Edition_16.07.27
+DeleteRegKey: HKLM\SOFTWARE\Cura_CREATABLE_Edition_16.07.27
 SetShellVarContext: all
-RMDir: /r "$SMPROGRAMS\Cura CREATABLE_Edition_16.07.13"
+RMDir: /r "$SMPROGRAMS\Cura CREATABLE_Edition_16.07.27"
 RMDir: /r "$INSTDIR"
 SectionEnd
 
@@ -10438,22 +10442,22 @@ Removing unused resources... Done!
 Generating language tables... Done!
 Generating uninstaller... Done!
 
-Output: "c:\Users\despild\ATEAMVENTURES\Cura_Packages\Cura_For_D3\CuraCreatableEdition_Ver16.07.13\scripts\win32\Cura_CREATABLE_Edition_16.07.13.exe"
-Install: 5 pages (320 bytes), 6 sections (6288 bytes), 4148 instructions (116144 bytes), 2968 strings (49629 bytes), 1 language table (322 bytes).
+Output: "c:\Users\despild\Documents\GitHub\CuraCreatableEdition\scripts\win32\Cura_CREATABLE_Edition_16.07.27.exe"
+Install: 5 pages (320 bytes), 6 sections (6288 bytes), 4152 instructions (116256 bytes), 2972 strings (49701 bytes), 1 language table (322 bytes).
 Uninstall: 4 pages (256 bytes), 
 1 section (1048 bytes), 286 instructions (8008 bytes), 162 strings (2539 bytes), 1 language table (282 bytes).
-Datablock optimizer saved 105515 bytes (~0.1%).
+Datablock optimizer saved 105516 bytes (~0.1%).
 
 Using lzma (compress whole) compression.
 
 EXE header size:              315904 / 34816 bytes
-Install code:                          (173079 bytes)
-Install data:                          (95221228 bytes)
+Install code:                          (173263 bytes)
+Install data:                          (95764306 bytes)
 Uninstall code+data:                   (95697 bytes)
-Compressed data:            24250583 / 95490004 bytes
-CRC (0xB5F581A5):                  4 / 4 bytes
+Compressed data:            24407965 / 96033266 bytes
+CRC (0x5C5077D1):                  4 / 4 bytes
 
-Total size:                 24566491 / 95524824 bytes (25.7%)
+Total size:                 24723873 / 96068086 bytes (25.7%)
 
 1 warning:
   install function "StrContains" not referenced - zeroing code (0-23) out
