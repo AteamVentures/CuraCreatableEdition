@@ -714,13 +714,13 @@ M104 S{print_temperature}	 ; set extruder temp
 M140 S{print_bed_temperature}; get bed heating up
 G1 Z100 F5000
 G1 X-135
-G1 Z1
+G1 Z{bottom_thickness}
 M109 S{print_temperature}    ; set extruder temp and wait
 M190 S{print_bed_temperature}; get bed heating up and wait
 G92 E-32
 G1 E0 F1000
 G1 E50 F200
-G1 F5000
+G1 F1000
 G1 X-125
 G92 E0
 """)
