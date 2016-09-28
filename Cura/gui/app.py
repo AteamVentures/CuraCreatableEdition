@@ -53,12 +53,14 @@ class CuraApp(wx.App):
 			socketListener.daemon = True
 			socketListener.start()
 
-		if sys.platform.startswith('darwin'):
-			#Do not show a splashscreen on OSX, as by Apple guidelines
-			self.afterSplashCallback()
-		else:
-			from Cura.gui import splashScreen
-			self.splash = splashScreen.splashScreen(self.afterSplashCallback)
+		# if sys.platform.startswith('darwin'):
+		# 	#Do not show a splashscreen on OSX, as by Apple guidelines
+		# 	self.afterSplashCallback()
+		# else:
+		# 	from Cura.gui import splashScreen
+		# 	self.splash = splashScreen.splashScreen(self.afterSplashCallback)
+		from Cura.gui import splashScreen
+		self.splash = splashScreen.splashScreen(self.afterSplashCallback)
 
 	def MacOpenFile(self, path):
 		try:
