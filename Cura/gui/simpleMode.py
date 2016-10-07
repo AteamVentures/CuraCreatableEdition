@@ -151,12 +151,12 @@ G1 X-125
 G1 Z1
 M109 S{print_temperature}    ; set extruder temp and wait
 M190 S{print_bed_temperature}; get bed heating up and wait
+G92 E-32
+G1 E0 F400
+G1 E50 F200
+G1 F1000
+G1 X-125
 G92 E0
-G1 E70 F200
-G1 E60 
-G1 F5000
-G1 X-100
-G92 E-5
 """
 			settings['end.gcode'] = """
 M400
@@ -170,6 +170,82 @@ M84                                          ; steppers off
 G90                                          ; absolute positioning
 ;{profile_string}
 """
+		if profile.getMachineSetting('machine_type') == 'creatableD2':
+			settings['start.gcode'] = """;This Gcode has been generated specifically for the Creatable D2
+;Basic settings: Layer height: {layer_height} Walls: {wall_thickness} Fill: {fill_density}
+;Filament Diameter: {filament_diameter}
+;Nozzle Size: {nozzle_size}
+G21                          ; metric values
+G90                          ; absolute positioning
+M82                          ; set extruder to absolute mode
+M106                         ; start with the fan on
+G28						 ; Go Home
+G92 E0                       ; set extruder position to 0
+M104 S{print_temperature}	 ; set extruder temp
+M140 S{print_bed_temperature}; get bed heating up
+G1 Z100 F5000
+G1 X-125
+G1 Z1
+M109 S{print_temperature}    ; set extruder temp and wait
+M190 S{print_bed_temperature}; get bed heating up and wait
+G92 E-32
+G1 E0 F400
+G1 E50 F200
+G1 F1000
+G1 X-125
+G92 E0
+"""
+			settings['end.gcode'] = """
+M400
+G28
+M104 S0                                      ; hotend off
+M140 S0                                      ; heated bed heater off (if you have it)
+M107                                         ; fans off
+G92 E0                      			     ; set extruder to 0
+G1 E-3 F300                  			     ; retract a bit to relieve pressure
+M84                                          ; steppers off
+G90                                          ; absolute positioning
+;{profile_string}
+"""
+
+		if profile.getMachineSetting('machine_type') == 'creatableD3':
+			settings['start.gcode'] = """;This Gcode has been generated specifically for the Creatable D3
+;Basic settings: Layer height: {layer_height} Walls: {wall_thickness} Fill: {fill_density}
+;Filament Diameter: {filament_diameter}
+;Nozzle Size: {nozzle_size}
+G21                          ; metric values
+G90                          ; absolute positioning
+M82                          ; set extruder to absolute mode
+M106 S255                    ; start with the fan on
+G28						 ; Go Home
+G92 E0                       ; set extruder position to 0
+M104 S{print_temperature}	 ; set extruder temp
+M140 S{print_bed_temperature}; get bed heating up
+G1 Z100 F5000
+G1 X-135
+G1 Z{bottom_thickness}
+M109 S{print_temperature}    ; set extruder temp and wait
+M190 S{print_bed_temperature}; get bed heating up and wait
+G92 E-32
+G1 E0 F400
+G1 E50 F200
+G1 F1000
+G1 X-125
+G92 E0
+"""
+			settings['end.gcode'] = """
+M400
+G28
+M104 S0                                      ; hotend off
+M140 S0                                      ; heated bed heater off (if you have it)
+M107                                         ; fans off
+G92 E0                      			     ; set extruder to 0
+G1 E-3 F300                  			     ; retract a bit to relieve pressure
+M84                                          ; steppers off
+G90                                          ; absolute positioning
+;{profile_string}
+"""
+
 		return settings
 
 	def updateProfileToControls(self):

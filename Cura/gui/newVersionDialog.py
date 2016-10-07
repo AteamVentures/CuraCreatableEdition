@@ -25,11 +25,8 @@ class newVersionDialog(wx.Dialog):
 		s.Add(wx.StaticText(p, -1, 'Welcome to the new version of Cura CREATABLE Edition.'))
 		s.Add(wx.StaticText(p, -1, '(This dialog is only shown once)'))
 		s.Add(wx.StaticLine(p), flag=wx.EXPAND|wx.TOP|wx.BOTTOM, border=10)
-		s.Add(wx.StaticText(p, -1, 'New in Version 16.07.27:'))
-		s.Add(wx.StaticText(p, -1, '* Change scene view color codes'))
-		s.Add(wx.StaticText(p, -1, '* Add shadow under the bed'))
-		s.Add(wx.StaticText(p, -1, '* Delete background image'))
-		s.Add(wx.StaticText(p, -1, '* Change the position and amount of pre-extrusion'))
+		s.Add(wx.StaticText(p, -1, 'New in Version 16.10.07:'))
+		s.Add(wx.StaticText(p, -1, '* Fix CREATABLE D3 Quick Slicing Start Gcode'))
 		
 		self.hasUltimaker = None
 		self.hasUltimaker2 = None

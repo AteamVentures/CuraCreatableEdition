@@ -645,7 +645,7 @@ G1 Z1
 M109 S{print_temperature}    ; set extruder temp and wait
 M190 S{print_bed_temperature}; get bed heating up and wait
 G92 E-32
-G1 E0 F1000
+G1 E0 F400
 G1 E40 F200
 G1 F5000
 G1 X-100
