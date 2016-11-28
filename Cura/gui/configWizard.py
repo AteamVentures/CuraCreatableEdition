@@ -631,19 +631,18 @@ class MachineSelectPage(InfoPage):
 ;Basic settings: Layer height: {layer_height} Walls: {wall_thickness} Fill: {fill_density}
 ;Filament Diameter: {filament_diameter}
 ;Nozzle Size: {nozzle_size}
+;Print time: {print_time}
 G21                          ; metric values
 G90                          ; absolute positioning
 M82                          ; set extruder to absolute mode
 M106 S255                    ; start with the fan on
 G28						 ; Go Home
 G92 E0                       ; set extruder position to 0
-M104 S{print_temperature}	 ; set extruder temp
-M140 S{print_bed_temperature}; get bed heating up
 G1 Z100 F5000
+M190 S{print_bed_temperature}; get bed heating up and wait
+M109 S{print_temperature}    ; set extruder temp and wait
 G1 X-125
 G1 Z1
-M109 S{print_temperature}    ; set extruder temp and wait
-M190 S{print_bed_temperature}; get bed heating up and wait
 G92 E-32
 G1 E0 F400
 G1 E40 F200
@@ -704,19 +703,18 @@ G92 E0
 ;Basic settings: Layer height: {layer_height} Walls: {wall_thickness} Fill: {fill_density}
 ;Filament Diameter: {filament_diameter}
 ;Nozzle Size: {nozzle_size}
+;Print time: {print_time}
 G21                          ; metric values
 G90                          ; absolute positioning
 M82                          ; set extruder to absolute mode
 M106 S255                    ; start with the fan on
 G28						 ; Go Home
 G92 E0                       ; set extruder position to 0
-M104 S{print_temperature}	 ; set extruder temp
-M140 S{print_bed_temperature}; get bed heating up
 G1 Z100 F5000
+M190 S{print_bed_temperature}; get bed heating up and wait
+M109 S{print_temperature}    ; set extruder temp and wait
 G1 X-135
 G1 Z{bottom_thickness}
-M109 S{print_temperature}    ; set extruder temp and wait
-M190 S{print_bed_temperature}; get bed heating up and wait
 G92 E-32
 G1 E0 F1000
 G1 E50 F200
