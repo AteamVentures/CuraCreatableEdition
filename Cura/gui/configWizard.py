@@ -614,7 +614,7 @@ class MachineSelectPage(InfoPage):
 			profile.putProfileSetting('filament_flow','100')
 			# - advanced -	
 			profile.putProfileSetting('nozzle_size', '0.4')
-			profile.putProfileSetting('retraction_speed','40')
+			profile.putProfileSetting('retraction_speed','100')
 			profile.putProfileSetting('retraction_amount','4.5')
 			profile.putProfileSetting('bottom_thickness','0.3')
 			profile.putProfileSetting('layer0_width_factor','100')
@@ -627,7 +627,7 @@ class MachineSelectPage(InfoPage):
 			profile.putProfileSetting('insetx_speed','0.0')
 			profile.putProfileSetting('cool_min_layer_time','5')
 			profile.putProfileSetting('fan_enabled','True')
-			profile.setAlterationFile('start.gcode', """;This Gcode has been generated specifically for the Creatable D2
+			profile.setAlterationFile('start.gcode', """;This Gcode has been generated specifically for the CREATABLE D2
 ;Basic settings: Layer height: {layer_height} Walls: {wall_thickness} Fill: {fill_density}
 ;Filament Diameter: {filament_diameter}
 ;Nozzle Size: {nozzle_size}
@@ -686,7 +686,7 @@ G92 E0
 			profile.putProfileSetting('filament_flow','100')
 			# - advanced -	
 			profile.putProfileSetting('nozzle_size', '0.4')
-			profile.putProfileSetting('retraction_speed','40')
+			profile.putProfileSetting('retraction_speed','100')
 			profile.putProfileSetting('retraction_amount','4.5')
 			profile.putProfileSetting('bottom_thickness','0.3')
 			profile.putProfileSetting('layer0_width_factor','100')
@@ -699,7 +699,7 @@ G92 E0
 			profile.putProfileSetting('insetx_speed','0.0')
 			profile.putProfileSetting('cool_min_layer_time','5')
 			profile.putProfileSetting('fan_enabled','True')
-			profile.setAlterationFile('start.gcode', """;This Gcode has been generated specifically for the Creatable D3
+			profile.setAlterationFile('start.gcode', """;This Gcode has been generated specifically for the CREATABLE D3
 ;Basic settings: Layer height: {layer_height} Walls: {wall_thickness} Fill: {fill_density}
 ;Filament Diameter: {filament_diameter}
 ;Nozzle Size: {nozzle_size}
