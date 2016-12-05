@@ -32,8 +32,9 @@ class aboutWindow(wx.Frame):
 		logTitle = wx.StaticText(p, -1, 'Update Log:')
 		logTitle.SetFont(wx.Font(14, wx.SWISS, wx.NORMAL, wx.BOLD))
 		s.Add(logTitle,flag=wx.BOTTOM, border=5)
-		s.Add(wx.StaticText(p, -1, 'New in Version 16.10.07:'))
-		s.Add(wx.StaticText(p, -1, '* Fix CREATABLE D3 Quick Slicing Start Gcode'))
+		s.Add(wx.StaticText(p, -1, 'New in Version 16.12.05:'))
+		s.Add(wx.StaticText(p, -1, '* Fix Quick Slicing Settings'))
+		s.Add(wx.StaticText(p, -1, '* Fix Heating Order in Start Gcode'))
 		s.Add(wx.StaticText(p, -1, '============================================================='))
 
 		s.Add(wx.StaticText(p, -1, 'Old Version History can be seen in follow address:'), flag=wx.TOP, border=10)
