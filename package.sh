@@ -22,7 +22,7 @@ BUILD_TARGET=${1:-none}
 ##Do we need to create the final archive
 ARCHIVE_FOR_DISTRIBUTION=1
 ##Which version name are we appending to the final archive
-export BUILD_NAME=CREATABLE_Edition_16.10.07
+export BUILD_NAME=CREATABLE_Edition_16.12.05
 TARGET_DIR=Cura_${BUILD_NAME}_${BUILD_TARGET}
 
 ##Which versions of external programs to use
