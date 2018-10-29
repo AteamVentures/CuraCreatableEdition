@@ -22,7 +22,7 @@ BUILD_TARGET=${1:-none}
 ##Do we need to create the final archive
 ARCHIVE_FOR_DISTRIBUTION=1
 ##Which version name are we appending to the final archive
-export BUILD_NAME=CREATABLE_Edition_16.12.05
+export BUILD_NAME=16.12.05
 TARGET_DIR=Cura_${BUILD_NAME}_${BUILD_TARGET}
 
 ##Which versions of external programs to use
@@ -144,10 +144,6 @@ else
 	ARDUINO_VERSION=160
 fi
 
-if [ ! -d "$ARDUINO_PATH" ]; then
-  echo "Arduino path '$ARDUINO_PATH' doesn't exist"
-  exit 1
-fi
 
 
 #Build the Ultimaker Original firmwares.
